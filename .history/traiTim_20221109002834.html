@@ -58,7 +58,7 @@
         var width = (canvas.width = koef * innerWidth);
         var height = (canvas.height = koef * innerHeight);
         var rand = Math.random;
-        ctx.fillStyle = "rgba(0,0,0,.1)";
+        ctx.fillStyle = "rgba(0,0,0,1)";
         ctx.fillRect(0, 0, width, height);
 
         var heartPosition = function (rad) {
@@ -80,7 +80,7 @@
         window.addEventListener("resize", function () {
           width = canvas.width = koef * innerWidth;
           height = canvas.height = koef * innerHeight;
-          ctx.fillStyle = "rgba(21, 121, 208)";
+          ctx.fillStyle = "rgba(0,0,0,19)";
           ctx.fillRect(0, 0, width, height);
         });
 
@@ -177,9 +177,9 @@
               ctx.fillRect(u.trace[k].x, u.trace[k].y, 1.5, 1.5);
             }
           }
-          //   ctx.fillStyle = "rgba(255,255,255,1)";
-          //   for (i = u.trace.length; i--; )
-          //     ctx.fillRect(targetPoints[i][0], targetPoints[i][1], 2, 2);
+          ctx.fillStyle = "rgba(255,255,255,1)";
+          for (i = u.trace.length; i--; )
+            ctx.fillRect(targetPoints[i][0], targetPoints[i][1], 2, 2);
 
           window.requestAnimationFrame(loop, canvas);
         };
